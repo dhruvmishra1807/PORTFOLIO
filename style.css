@@ -1,0 +1,609 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+    color: white;
+}
+#header{
+    background: black;
+    height: 100vh;
+    width: 100%;
+}
+#header .logo{
+    width:100px;
+    animation: slideRight 0.5s ease forwards;
+}
+.container{
+    padding:10px 8%;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    animation: slideTop 0.5s ease forwards;
+
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin:10px 20px;
+
+}
+nav ul li a{
+    text-decoration: none;
+    font-family: sans-serif;
+    color: white;
+    position: relative;
+}
+nav ul li a::after{
+    content: "";
+    width:0;
+    height: 2px;
+    background:aqua;
+    position: absolute;
+    left:0;
+    bottom: -6px;
+    transition: 0.3s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.header-text{
+    margin: 70px 0 20px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#element{
+    color: aqua;
+}
+.header-text h1{
+    opacity: 0;
+    color: white;
+    animation: slidebottom .7s ease forwards 0.5s;
+    margin: 10% 0 0;
+
+}
+#header .links a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+    border:2px solid aqua;
+    font-size: 25px;
+    text-decoration: none;
+    color: aqua;
+    margin:15px 10px 15px 0;
+    animation: slideRight 0.7s ease forwards 0.5s;
+    opacity: 0;
+}
+.links a:hover{
+    box-shadow: 0 0 20px aqua;
+    background-color: aqua;
+    color: black !important;
+    
+}
+@keyframes slideRight {
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    
+}
+@keyframes slideTop {
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+}
+@keyframes slideLeft {
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes slidebottom {
+    0%{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+}
+nav .bx{
+    display: none;
+}
+@media screen and (max-width:1000px) {
+    nav .bx{
+        display: inline-block;
+        font-size:25px;
+        cursor: pointer;
+    }
+    nav ul{
+        background: #fff;
+        position: fixed;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        margin-right: -35px;
+        display: none;
+        transition: display 0.5s;
+    }
+    nav ul li{
+        display: block;
+        padding-top: 10px;
+    }
+    nav ul li a{
+        color: black;
+    }
+    .header-text{
+        z-index: -1;
+    }
+    .active{
+        display: inline-block;
+        right:0%;
+    }
+    nav .bx-exit{
+        cursor: pointer;
+        position: absolute;
+        top:25px;
+        left: 25px;
+    }
+}
+/* ----------------------------about------------------------- */
+
+#about{
+    padding:50px 0;
+    color: white;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10%;
+    justify-content: space-between;
+}
+.about-col-1 img{
+    width: 100%;
+    height: 50%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+ .about-col-2 .sub-title{
+    font-size: 50px;
+    font-family: sans-serif;
+}
+.about-col-2 p{
+    margin:20px 0;
+    font-size: 20px;
+    line-height: 30px;
+    font-family: sans-serif;
+}
+.about-col-2 span{
+    color: aqua;
+}
+/* ------------------------SKILLS--------------------------- */
+
+.aqua{
+    color: aqua;
+}
+.sub-title{
+    color:white;
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+    font-family:serif;
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+}
+.container1{
+    width:400px;
+    height: 540px;
+    padding: 75px 90px;
+    margin: auto;
+}
+.heading1{
+    text-decoration: underline;
+    text-align: center;
+    text-underline-offset: 10px;
+    margin-bottom: 40px;
+}
+.bar{
+    font-size: 20px;
+}
+.Technical-bars .bar{
+    margin: 20px 0;
+}
+.Technical-bars .bar:first-child{
+    margin-top: 0;
+}
+.Technical-bars .bar:last-child{
+    margin-bottom: 0;
+}
+.Technical-bars .bar .info{
+    margin-bottom: 5px;
+}
+.Technical-bars .bar .info span{
+    font-size: 18px;
+    font-weight: 500;
+    animation: showtext 0.5s 1s linear forwards;
+}
+.Technical-bars .bar .progress-line{
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    background-color: black;
+    height: 5px;
+    animation: animate 1s linear forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+@keyframes animate {
+    100%{
+        transform:scaleX(1)
+    }
+}
+.Technical-bars .bar .progress-line span{
+    height: 100%;
+    background-color: aqua;
+    position: absolute;
+    border-radius: 10px;
+    animation: animate 1s  linear forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+.progress-line.html span{
+    width:90%;
+}.progress-line.css span{
+    width:80%;
+}.progress-line.javascript span{
+    width:75%;
+}.progress-line.react span{
+    width:30%;
+}.progress-line.nodejs span{
+    width:30%;
+}.progress-line.python span{
+    width:50%;
+}.progress-line.c span{
+    width:90%;
+}
+.progress-line span::after{
+    position: absolute;
+    padding: 1px 8px;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    border-radius: 3px;
+    top:-28px;
+    right: -20px;
+    animation: showtext 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+.progress-line.html span::after{
+    content: "90%";
+}.progress-line.css span::after{
+    content: "85%";
+}.progress-line.javascript span::after{
+    content: "70%";
+}.progress-line.react span::after{
+    content: "30%";
+}.progress-line.nodejs span::after{
+    content: "30%";
+}.progress-line.python span::after{
+    content: "50%";
+}.progress-line.c span::after{
+    content: "90%";
+}
+.progress-line span::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border:7px solid transparent;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    top: -10px;
+    right: 0;
+    animation: showtext 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+@keyframes showtext {
+    100%{
+        opacity: 1;
+    }
+    
+}
+.radial-bars{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.radial-bars .radial-bar{
+    width: 50%;
+    height: 170px;
+    position: relative;
+}
+.radial-bars .radial-bar svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 120px;
+    height: 150px;
+}
+.radial-bars .radial-bar .progress-bar{
+    stroke-width: 10;
+    stop-color: black;
+    fill:transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+    animation: animate-bar 1s linear forwards;
+}
+@keyframes animate-bar {
+    100%{
+        stroke-dashoffset: -1;
+    }
+}
+.path{
+    stroke-width: 10;
+    stroke:aqua;
+    fill:transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+}
+.path-1{animation: animate-path1 1s 1s linear forwards;}
+.path-2{animation: animate-path2 1s 1s linear forwards;}
+.path-3{animation: animate-path3 1s 1s linear forwards;}
+.path-4{animation: animate-path4 1s 1s linear forwards;}
+@keyframes animate-path1 {
+    100%{
+        stroke-dashoffset: 50;
+    }
+}
+@keyframes animate-path2 {
+    100%{
+        stroke-dashoffset: 175;
+    }
+}
+@keyframes animate-path3 {
+    100%{
+        stroke-dashoffset: 125;
+    }
+}
+@keyframes animate-path4 {
+    100%{
+        stroke-dashoffset: 75;
+    }
+}
+.radial-bar .percentage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 16px;
+    font-weight: 600;
+    animation: showtext 0.5s 1s linear forwards;
+    opacity: 0;
+}
+
+.radial-bar .text{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50px);
+    font-size: 16px;
+    animation: showtext 0.5s 1s linear forwards;
+
+}
+/* ---------portfolio-------------- */
+
+
+
+#portfolio h1{
+    margin: 10% 0 3% 0;
+}
+
+.container-portfolio{
+    max-width: 80vw;
+    margin: auto;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.project{
+    max-width: 24%;
+    font-size: 18px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 10px;
+}
+.project img{
+    width: 100%;
+    height: 100%;
+    /* border: 2px solid aqua; */
+    border-radius: 10px;
+}
+.project:hover{
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: transform 0.3s;
+    box-shadow: 1px 1px 20px aqua;
+}
+@media only screen and (max-width:1000px) {
+
+    .container-portfolio{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 80vw;
+    }
+    .project{
+        max-width: 100%;
+        margin: auto;
+        margin-top: 35px;
+    }
+    #footer p{
+        font-size: 17px !important;
+    }
+}
+
+/* -----------contact-------- */
+
+#contact{
+    max-width: 85vw;
+    margin: auto;
+    margin-top: 85px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slidebottom 0.5s linear forwards;
+}
+.google-maps{
+    width: 37vw;
+    margin: auto;
+    opacity: 0;
+    animation: slideRight 0.5s 0.5s ease forwards;
+    
+}
+
+.container-contact{
+    display: flex;
+    width:85vw;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.contact-form{
+    width:40vw;
+    margin: auto;
+    opacity: 0;
+    animation: slideLeft 0.5s 0.5s ease-in forwards;
+}
+#contact iframe{
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px aqua;
+}
+#contact iframe:hover{
+    transform: scale(1.02);
+    transition: transform 0.2s;
+}
+form{
+    width: 100%;
+}
+form .btn{
+    display: inline-block;
+    background-color: rgb(0, 0, 0);
+    border:1px solid aqua;
+    color: aqua;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+form .btn:hover{
+    cursor: pointer;
+    background-color: aqua;
+    color: black;
+    box-shadow: 0 0 20px aqua;
+    
+}
+form input,textarea{
+    width: 95%;
+    border:0;
+    outline: none;
+    background: rgb(37, 37, 37);
+    padding: 15px;
+    margin: 10px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 8px;
+}
+#msg{
+    color: green;
+    font-size: 17px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: block;
+}
+@media only screen  and (max-width:800px) {
+    .container-contact{
+        display: flex;
+        flex-direction: column;
+    }
+    .google-maps{
+        width: 100%;
+        margin: auto;
+    }
+    .contact-form{
+        margin-top: 25px;
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------footer----------- */
+#footer p{
+    text-align: center !important;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 15px 0 20px 0;
+    font-family: sans-serif;
+    color: black;
+    font-weight: 700;
+}
+#footer{
+    margin-top: 40px;
+    background-color: gray;
+}
